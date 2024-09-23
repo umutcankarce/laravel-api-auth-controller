@@ -20,7 +20,7 @@ class indexController extends BaseController
 
         if($client && Hash::check($data["password"],$client->password)){
 
-            $token = $client->createToken("chat")->accessToken;
+            $token = $client->createToken("api_auth")->accessToken;
 
             return parent::success("Sisteme Giriş Yapılıyor.",[
                 "id"    => $client->id,
